@@ -88,8 +88,8 @@ video {
 body {
 	line-height: 130%;
 	-webkit-font-smoothing: antialiased;
-    overscroll-behavior: none;
-    /* The overscroll-behavior CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for overscroll-behavior-x and overscroll-behavior-y. */
+	overscroll-behavior: none;
+	/* The overscroll-behavior CSS property sets what a browser does when reaching the boundary of a scrolling area. It's a shorthand for overscroll-behavior-x and overscroll-behavior-y. */
 }
 
 article,
@@ -176,17 +176,49 @@ select {
 	vertical-align: middle;
 }
 
-input::-webkit-input-placeholder {color:#ebedec;}
-input::-moz-placeholder          {color:#ebedec;}/* Firefox 19+ */
-input::-moz-input-placeholder{color:#ebedec;}
-input:-moz-placeholder           {color:#ebedec;}/* Firefox 18- */
-input:-ms-input-placeholder      {color:#ebedec;}
+input::-webkit-input-placeholder {
+	color: #ebedec;
+}
 
-input:focus::-webkit-input-placeholder {color:#ebedec;}
-input:focus::-moz-placeholder          {color:#ebedec;}/* Firefox 19+ */
-input:focus::-moz-input-placeholder{color:#ebedec;}
-input:focus:-moz-placeholder           {color:#ebedec;}/* Firefox 18- */
-input:focus:-ms-input-placeholder      {color:#ebedec;}
+input::-moz-placeholder {
+	color: #ebedec;
+}
+
+/* Firefox 19+ */
+input::-moz-input-placeholder {
+	color: #ebedec;
+}
+
+input:-moz-placeholder {
+	color: #ebedec;
+}
+
+/* Firefox 18- */
+input:-ms-input-placeholder {
+	color: #ebedec;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: #ebedec;
+}
+
+input:focus::-moz-placeholder {
+	color: #ebedec;
+}
+
+/* Firefox 19+ */
+input:focus::-moz-input-placeholder {
+	color: #ebedec;
+}
+
+input:focus:-moz-placeholder {
+	color: #ebedec;
+}
+
+/* Firefox 18- */
+input:focus:-ms-input-placeholder {
+	color: #ebedec;
+}
 
 
 /*@media*/
@@ -212,7 +244,8 @@ input:focus:-ms-input-placeholder      {color:#ebedec;}
 /* wrapper */
 #wrapper {
 	display: block;
-	position: relative; width: 100%;
+	position: relative;
+	width: 100%;
 	/* height: 100%; */
 }
 
@@ -240,6 +273,7 @@ header {
 	display: block;
 	position: relative;
 }
+
 /* 
 #welcome{
 	height: 700px;
@@ -296,7 +330,8 @@ background-color:yellow;
 		position: relative;
 		width: 768px;
 	}
-    /* #welcome{
+
+	/* #welcome{
 		height: 888px;
 	}
 	#second{
@@ -323,6 +358,7 @@ background-color:yellow;
 		width: 100%;
 		padding: 0;
 	}
+
 	/* #welcome{
 		height: 707px;
 	}
@@ -350,45 +386,89 @@ background-color:yellow;
 
 /* main var */
 :root {
-    --main-color: #3aebca;
-    --main-color-light: #d6f5ef;
-    --main-color-dark: #3aebcae0;
-    --black: #08080a;
-    --white: #fffffc;
+	--main-color: #3aebca;
+	--main-color-light: #d6f5ef;
+	--main-color-dark: #3aebcae0;
+	--black: #08080a;
+	--white: #fffffc;
 }
+
 
 /* main screen */
 
-#page-wrapper{
-    /* width: 100%; */
-    height: 100vh;
-    background-color: var(--black);
-    /* position:absolute; */
-    overflow: hidden;
+#page-wrapper {
+	/* width: 100%; */
+	height: 100vh;
+	background-color: var(--black);
+	/* position:absolute; */
+	overflow: hidden;
+	position: relative;
 }
+
+canvas {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0
+}
+
 .slider {
 	display: block;
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    color: var(--white);
-    font-family: sans-serif;
-    text-align: right;
+	position: fixed;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 150px;
+	color: var(--white);
+	font-family: sans-serif;
+	text-align: right;
 }
 
 .slider input {
-    width: 100%;
-    margin-bottom: 5px;
-    cursor: pointer;
+	width: 100%;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+#wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+
+/* sidepanel */
+.sidepanel {
+	position: absolute;
+	font-weight: 500;
+	top: calc((50% - 110px));
+	left: 22px;
+	width: 22px;
+	height: 360px;
+	/* height: 550px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2
+}
+
+.sidepanel a svg {
+	/* transform: rotate(90deg); */
+	fill: var(--white);
+	width:19px;height: 20px;
+}
+
+.sidepanel__devider {
+	width: 1px;
+	height: 150px;
+	background-color: rgba(255, 255, 252, .5)
 }
 
 /* main-logo */
-.main-logo{
+.main-logo {
 	position: fixed;
-	z-index:999999;
-	top:11px;
-	width:40px;
-	left:calc(50% - 20px );
+	z-index: 999999;
+	top: 11px;
+	width: 40px;
+	left: calc(50% - 20px);
 }
