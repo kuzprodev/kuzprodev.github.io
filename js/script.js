@@ -382,6 +382,6 @@ switch (showBg) {
 //sidepanel - social
 
 const sidepanel = document.querySelector('aside.sidepanel');
-setTimeout(()=>{
+setTimeout(() => {
     sidepanel.classList.add('visible')
-},1000)
+}, 1000)
