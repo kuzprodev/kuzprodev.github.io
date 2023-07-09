@@ -85,7 +85,6 @@ const stars = () => {
 
 const monster = () => {
     var actualDisplay = getComputedStyle(slider.parentNode).display;
-    console.log(actualDisplay);
     if (actualDisplay == 'block') {
         slider.parentNode.style.display = 'none';
     }
@@ -379,3 +378,10 @@ switch (showBg) {
 }
 
 //background stop
+
+//sidepanel - social
+
+const sidepanel = document.querySelector('aside.sidepanel');
+setTimeout(()=>{
+    sidepanel.classList.add('visible')
+},1000)
