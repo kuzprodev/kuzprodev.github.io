@@ -245,10 +245,10 @@ const monster = () => {
             }
         }
 
-        let maxl = 300,
-            minl = 50,
-            n = 30,
-            numt = 500,
+        let maxl = 200,
+            minl = 30,
+            n = 20,
+            numt = 300,
             tent = [],
             clicked = false,
             target = {
@@ -257,7 +257,7 @@ const monster = () => {
             },
             last_target = {},
             t = 0,
-            q = 10;
+            q = 5;
 
         for (let i = 0; i < numt; i++) {
             tent.push(
